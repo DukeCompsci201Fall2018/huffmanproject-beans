@@ -42,12 +42,15 @@ public class HuffProcessor {
 	 */
 	public void compress(BitInputStream in, BitOutputStream out){
 
-		while (true){
+		
+		
+		
+	/*	while (true){
 			int val = in.readBits(BITS_PER_WORD);
 			if (val == -1) break;
 			out.writeBits(BITS_PER_WORD, val);
 		}
-		out.close();
+		out.close();*/
 	}
 	/**
 	 * Decompresses a file. Output file must be identical bit-by-bit to the
