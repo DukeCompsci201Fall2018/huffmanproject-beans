@@ -82,7 +82,7 @@ public class HuffProcessor {
 		//if(val == -1) 
 		//	throw new HuffException("Not a valid input.");
 		if(root.myLeft != null || root.myRight != null) {
-			out.write(0);
+			out.writeBits(1,0);
 			writeHeader(root.myLeft, out);
 			writeHeader(root.myRight, out);
 			
