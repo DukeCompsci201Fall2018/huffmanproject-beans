@@ -70,7 +70,7 @@ public class HuffProcessor {
 			
 			val = in.readBits(BITS_PER_WORD);
 			
-			if(val == 1) {
+			if(val == -1) {
 				break;
 			} else {
 				String code = codings[val];
