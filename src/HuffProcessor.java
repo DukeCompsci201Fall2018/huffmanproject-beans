@@ -124,7 +124,7 @@ public class HuffProcessor {
 		} 
 		
 		codingHelper(root.myLeft, path + "0", encodings);
-		codingHelper(root.myRight, path + "1'", encodings);
+		codingHelper(root.myRight, path + "1", encodings);
 		
 		
 	}
