@@ -70,11 +70,11 @@ public class HuffProcessor {
 			
 			val = in.readBits(BITS_PER_WORD);
 			
-			if(val != 1) {
+			if(val == 1) {
+				break;
+			} else {
 				String code = codings[val];
 				out.writeBits(code.length(), Integer.parseInt(code, 2));
-			} else {
-				break;
 			}
 				
 		}
@@ -143,6 +143,8 @@ public class HuffProcessor {
 	         HuffNode t = new HuffNode(-1,left.myWeight + right.myWeight,left,right);
 	         pq.add(t);
 	     }
+	     
+	     pq.add(new HuffNode(PSEUDO_EOF,1,null,null));
 	     HuffNode root = pq.remove();
 		
 		return root;
