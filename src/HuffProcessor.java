@@ -79,6 +79,9 @@ public class HuffProcessor {
 
 	private void writeHeader(HuffNode root, BitOutputStream out) {
 		
+		if(root == null)
+			return;
+		
 		int val = root.myValue;
 		//if(val == -1) 
 		//	throw new HuffException("Not a valid input.");
@@ -103,6 +106,9 @@ public class HuffProcessor {
 	}
 
 	private void codingHelper(HuffNode root, String path, String[] encodings) {
+		
+		if(root == null)
+			return;
 		
 		if(root.myLeft == null && root.myRight == null) {
 			encodings[root.myValue] = path;
