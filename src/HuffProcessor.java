@@ -66,12 +66,18 @@ public class HuffProcessor {
 		
 		int val = in.readBits(BITS_PER_WORD);
 		
-		while(val != -1) {
-			String code = codings[val];
-			out.writeBits(code.length(), Integer.parseInt(code, 2));
+		while(true) {
+			
 			val = in.readBits(BITS_PER_WORD);
+			
+			if(val != 1) {
+				String code = codings[val];
+				out.writeBits(code.length(), Integer.parseInt(code, 2));
+			} else {
+				break;
+			}
+				
 		}
-		
 		String code = codings[PSEUDO_EOF];
 		out.writeBits(code.length(), Integer.parseInt(code, 2));
 		
@@ -108,7 +114,7 @@ public class HuffProcessor {
 	private void codingHelper(HuffNode root, String path, String[] encodings) {
 		
 		if(root == null)
-			return;
+			return; 
 		
 		if(root.myLeft == null && root.myRight == null) {
 			encodings[root.myValue] = path;
