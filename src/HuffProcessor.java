@@ -64,11 +64,11 @@ public class HuffProcessor {
 	}
 	private void writeCompressedBits(String[] codings, BitInputStream in, BitOutputStream out) {
 		
-		int val = in.readBits(BITS_PER_WORD);
+	
 		
 		while(true) {
 			
-			val = in.readBits(BITS_PER_WORD);
+			int val = in.readBits(BITS_PER_WORD);
 			
 			if(val == -1) {
 				break;
